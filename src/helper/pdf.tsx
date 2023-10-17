@@ -113,13 +113,13 @@ const styles = StyleSheet.create({
     marginBottom: "40px",
   },
   signatureText: {
-    fontSize: "10px",
+    fontSize: "14px",
     fontWeight: 500,
     // fontFamily: "Cedarville",
     textAlign: "center",
   },
   signatureTextTransparent: {
-    fontSize: "10px",
+    fontSize: "14px",
     fontWeight: 500,
     // fontFamily: "Cedarville",
     color: "white",
