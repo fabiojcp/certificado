@@ -61,7 +61,7 @@ export const Title2 = styled.p`
 `;
 
 export const Text = styled.p`
-  font-size: 10px;
+  font-size: 14px;
   font-weight: 400;
   max-width: 80%;
   text-align: center;
@@ -88,15 +88,18 @@ export const Signature = styled.div`
   display: flex;
   align-items: center;
   flex-direction: column;
+  text-align: center;
+
   gap: 6px;
   p {
     font-size: 10px;
     font-weight: 500;
+    text-align: center;
+    min-width: 40%;
   }
 
   p:first-child {
     border-bottom: 1px solid #252525;
-    min-width: 40%;
   }
 `;
 

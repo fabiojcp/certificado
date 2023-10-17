@@ -90,7 +90,7 @@ const styles = StyleSheet.create({
     marginTop: "-60px",
   },
   text: {
-    fontSize: "10px",
+    fontSize: "14px",
     fontWeight: 400,
     maxWidth: "60%",
     textAlign: "center",
@@ -98,8 +98,10 @@ const styles = StyleSheet.create({
   signature: {
     display: "flex",
     alignItems: "center",
+    justifyContent: "center",
     gap: "4px",
     marginBottom: "40px",
+    textAlign: "center",
   },
   signatureContainer: {
     display: "flex",
@@ -114,15 +116,19 @@ const styles = StyleSheet.create({
     fontSize: "10px",
     fontWeight: 500,
     // fontFamily: "Cedarville",
-    borderBottom: "1px solid #252525",
-    minWidth: "40%",
+    textAlign: "center",
   },
   signatureTextTransparent: {
     fontSize: "10px",
     fontWeight: 500,
     // fontFamily: "Cedarville",
-    borderBottom: "1px solid #252525",
     color: "white",
+  },
+  signatureBorder: {
+    borderBottom: "1px solid #252525",
+    minWidth: "200px",
+    width: "100%",
+    marginTop: "-4px",   
   },
 });
 
@@ -155,10 +161,12 @@ const MyDocument = ({ student, course, holder }: PDFProps) => (
         <View style={styles.signatureContainer}>
           <View style={styles.signature}>
             <Text style={styles.signatureText}>{holder}</Text>
+            <View style={styles.signatureBorder}></View>
             <Text style={styles.text}>Instrutor</Text>
           </View>
           <View style={styles.signature}>
-            <Text style={styles.signatureTextTransparent}>{holder}</Text>
+            <Text style={styles.signatureTextTransparent}>a</Text>
+            <View style={styles.signatureBorder}></View>
             <Text style={styles.text}>Aluno</Text>
           </View>
         </View>
