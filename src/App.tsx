@@ -1,25 +1,60 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+
+import PDF from "./components/pdf";
+
+import { PDFDownloadLink } from "@react-pdf/renderer";
+
+import * as S from "./styles";
+import "./styles.css";
+import MyDocument from "./helper/pdf";
 
 function App() {
+  const [student, setStudent] = React.useState("Fábio José Casanova Penteado");
+  const [course, setCourse] = React.useState(
+    "Typescript, Node. Criação de aplicações FullStack"
+  );
+  const [holder, setHolder] = React.useState("João Vitor Oliveira dos Santos");
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+    <S.Container>
+      <S.DataContainer>
+        <S.Label>Aluno</S.Label>
+        <S.Input
+          autoComplete="false"
+          placeholder="Aluno"
+          onChange={(e) => setStudent(e.target.value)}
+          value={student}
+        />
+
+        <S.Label>Curso</S.Label>
+        <S.Input
+          autoComplete="false"
+          placeholder="Curso"
+          onChange={(e) => setCourse(e.target.value)}
+          value={course}
+        />
+
+        <S.Label>Professor</S.Label>
+        <S.Input
+          autoComplete="false"
+          placeholder="Professor"
+          onChange={(e) => setHolder(e.target.value)}
+          value={holder}
+        />
+      </S.DataContainer>
+      <PDF student={student} course={course} holder={holder} />
+
+      <S.ExportButton>
+        <PDFDownloadLink
+          document={
+            <MyDocument student={student} course={course} holder={holder} />
+          }
+          fileName={`Certificado ${course}.pdf`}
         >
-          Learn React
-        </a>
-      </header>
-    </div>
+          Exportar
+        </PDFDownloadLink>
+      </S.ExportButton>
+    </S.Container>
   );
 }
 
