@@ -115,6 +115,7 @@ const styles = StyleSheet.create({
     fontWeight: 500,
     // fontFamily: "Cedarville",
     borderBottom: "1px solid #252525",
+    minWidth: "40%",
   },
   signatureTextTransparent: {
     fontSize: "10px",

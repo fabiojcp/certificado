@@ -96,6 +96,7 @@ export const Signature = styled.div`
 
   p:first-child {
     border-bottom: 1px solid #252525;
+    min-width: 40%;
   }
 `;
 
